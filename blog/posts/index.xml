@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on بلاگ - میلاد دورباش</title>
+    <link>https://doorbash.github.io/blog/posts/</link>
+    <description>Recent content in Posts on بلاگ - میلاد دورباش</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://doorbash.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>تلگرام: استیکر و گیف ممنوع!</title>
+      <link>https://doorbash.github.io/blog/posts/%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85_%D8%A7%D8%B3%D8%AA%DB%8C%DA%A9%D8%B1_%DA%AF%DB%8C%D9%81_%D9%85%D9%85%D9%86%D9%88%D8%B9/</link>
+      <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://doorbash.github.io/blog/posts/%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85_%D8%A7%D8%B3%D8%AA%DB%8C%DA%A9%D8%B1_%DA%AF%DB%8C%D9%81_%D9%85%D9%85%D9%86%D9%88%D8%B9/</guid>
+      <description>اگر شما هم مثل من دوستی دارید که فقط با استیکر و گیف حرف میزنه و این برای شما آزار دهنده هست این اسکریپت برای شماست:
+http://bit.do/e5AGo
+مراحل نصب: ابتدا پایتون 3 رو اگر ندارید نصب کنید. سپس این خط رو اجرا کنید:
+pip3 install telethon
+حالا به https://my.telegram.org  مراجعه کنید و یک کلاینت تلگرام بسازید و api_id و api_hash ای که گرفتید را در جای مربوط به خودشون در اسکریپت قرار بدید.</description>
+    </item>
+    
+    <item>
+      <title>نصب اندروید 8.1 Oreo روی LG G2</title>
+      <link>https://doorbash.github.io/blog/posts/%D9%86%D8%B5%D8%A8_%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF_oreo_lg_g2/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://doorbash.github.io/blog/posts/%D9%86%D8%B5%D8%A8_%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF_oreo_lg_g2/</guid>
+      <description>این آموزش برای نصب LineageOS 15.1 (اندروید 8.1) روی گوشی LG G2 d802 هست.
+برای مدل های دیگر G2 هم میتونید این آموزش رو دنبال کنید منتها باید بعضی جاها فایل مربوط به دستگاه خودتون رو دانلود کنید بجای فایلی که من نوشتم.
+اولین کاری که باید انجام بدیم فلش کردن رام استوک LP (همون Lollipop یا اندروید 5.0.2) هست.برای اینکار اول باید فایل kdz برای LP رو دانلود کنیم:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,19 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://doorbash.github.io/blog/posts/</loc>
-    <lastmod>2019-09-18T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://doorbash.github.io/blog/posts/%D8%A8%D8%A7%D8%B2%DB%8C_%D9%87%D8%A7%DB%8C_%D9%81%D9%84%D8%B4_%D9%82%D8%AF%DB%8C%D9%85%DB%8C/</loc>
-    <lastmod>2019-09-18T00:00:00+00:00</lastmod>
+    <loc>https://doorbash.github.io/blog/posts/%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C_%D8%AA%D8%B1%D8%A7%D9%81%DB%8C%DA%A9_%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87_%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF%DB%8C/</loc>
+    <lastmod>2020-06-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://doorbash.github.io/blog/</loc>
+    <lastmod>2020-06-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://doorbash.github.io/blog/posts/%D8%A8%D8%A7%D8%B2%DB%8C_%D9%87%D8%A7%DB%8C_%D9%81%D9%84%D8%B4_%D9%82%D8%AF%DB%8C%D9%85%DB%8C/</loc>
     <lastmod>2019-09-18T00:00:00+00:00</lastmod>
   </url>
   

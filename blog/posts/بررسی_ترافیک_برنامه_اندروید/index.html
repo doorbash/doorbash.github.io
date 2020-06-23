@@ -125,24 +125,24 @@
 کاری که میکنه اینه که میاد به اون دستگاه میگه روتر (همون مودم مثلا) منم! و به روتر میگه دستگاه منم! و اینها بجای اینکه بیان پکت ها رو برای همدیگه بفرستن برای ما میفرستن اشتباهی.
 و ما پکت ها رو میگیریم و فوروارد میکنیم برای طرف دیگه و این وسط یه نگاهی هم بهشون میندازیم.</p>
 <p>نصب pcap
-<div class="disable-scrollbars"><p class="block-code">Windows: Download and install npcap 0.99* from https://nmap.org/download.html
+<div><p class="block-code disable-scrollbars">Windows: Download and install npcap 0.99* from https://nmap.org/download.html
 Ubuntu: sudo apt install libpcap0.8-dev
 </p></div></p>
 <p>فعال کردن Packet Forwarding
-<div class="disable-scrollbars"><p class="block-code">Windows: https://serverfault.com/questions/929081/how-can-i-enable-packet-forwarding-on-windows
+<div><p class="block-code disable-scrollbars">Windows: https://serverfault.com/questions/929081/how-can-i-enable-packet-forwarding-on-windows
 Linux: echo 1 > /proc/sys/net/ipv4/ip_forward
 </p></div></p>
 <p>دانلود <span class="inline-code">arp-spoof.go</span> از اینجا:
 <p class="_ltr"><a href="https://git.io/JfxCx" target="_blank">https://git.io/JfxCx</a></p></p>
 <p>اجرای کد
-<div class="disable-scrollbars"><p class="block-code">go build
+<div><p class="block-code disable-scrollbars">go build
 arp-spoof deviceIP routerIP. Example: arp-spoof 192.168.1.12 192.168.1.1
 </p></div></p>
 <p>نصب Wireshark
 <p class="_ltr"><a href="https://www.wireshark.org/" target="_blank">https://www.wireshark.org/</a></p></p>
 <p>Wireshark را اجرا کنید. اینترفیس (مثلا وای‌فای) را انتخاب کنید تا شروع به کپچر کند.</p>
 <p>حالا مثلا برای گرفتن ترافیک http از آی‌پی موردنظر این فیلتر را وارد میکنیم:
-<div class="disable-scrollbars"><p class="block-code">http and ip.addr eq 192.168.1.12</p></div></p>
+<div><p class="block-code disable-scrollbars">http and ip.addr eq 192.168.1.12</p></div></p>
 <p>من روی تلویزیون خونه امتحان کردم و ترافیک زیر رو گرفتم:
 <img class="post-content-img" src="https://doorbash.github.io/blog/images/wireshark_traffic.png" alt="Wireshark traffic" /></p>
 <img class="post-content-img" src="https://doorbash.github.io/blog/images/wireshark_traffic_2.png" alt="Wireshark traffic 2" />
@@ -150,7 +150,7 @@ arp-spoof deviceIP routerIP. Example: arp-spoof 192.168.1.12 192.168.1.1
 <br>
 <h4>اضافه:</h4>
 <p>برای بدست آوردن آی‌پی دستگاه های روی شبکه میشه این کارو کرد:</p>
-<div class="disable-scrollbars"><p class="block-code">nmap -sP 192.168.1.0/24</p></div>
+<div><p class="block-code disable-scrollbars">nmap -sP 192.168.1.0/24</p></div>
 
           </div>
 

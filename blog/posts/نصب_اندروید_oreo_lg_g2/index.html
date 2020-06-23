@@ -144,16 +144,16 @@
 <p>بعد یک گزینه در تنظیمات اضافه میشه به اسم Developer Option که داخل اون هم خودش باید فعال باشه هم USB Debug یا یه همچین چیزی.</p>
 <p>بعد فایل <span class="inline-code">LG Root Script.bat</span> رو از توش با cmd اجرا میکنیم و گوشی ریستارت میشه.(برای اینکه adb روی ویندوز گوشی رو بشناسه اگر پیغام باز شد در اندروید که باید این اجازه رو بهش بدید)</p>
 <p>حالا اسکریپت تو خط Looking for LG serial port.. میمونه و جلوتر نمیره. حالا باید گوشی رو دستی به حالت دانلود مود ببریم . برای اینکار کابل USB رو قطع میکنیم گوشی رو خاموش میکنیم. دکمه ولوم بالا رو میگیریم و کابل USB رو وصل میکنیم. بعدش خط دوم تا جایی که نوشته :</p>
-<div class="block-code-parent"><p class="block-code">echo Rebooting into Download mode..</p></div>
+<p class="block-code disable-scrollbars">echo Rebooting into Download mode..</p>
 <p>رو پاک میکنیم تا اسکریپت به این شکل در بیاد:
-<div class="block-code-parent"><p class="block-code">@echo off
+<p class="block-code disable-scrollbars">@echo off
 Send_Command.exe \\.\%comPath% < enterDownload | echo off
-</p></div></p>
+</p></p>
 <p>حالا دوباره اجراش میکنیم و گوشی روت میشه. اگر ریستارت نشد خودمون ریستارتش میکنیم و با برنامهAuto Rec ریکاوری TWRP رو نصب می کنیم: (فایل مخصوص d802 هست)</p>
 <p class="_ltr"><a href="https://drive.google.com/open?id=1AP8M9V9WwzcBi84DjC__ZSZXuvARdhDZ" target="_blank">https://drive.google.com/open?id=1AP8M9V9WwzcBi84DjC__ZSZXuvARdhDZ</a></p>
 <p>حالا با دستور زیر میریم تو حالت ریکاوری:</p>
-<div class="block-code-parent"><p class="block-code">adb reboot recovery
-</p></div>
+<p class="block-code disable-scrollbars">adb reboot recovery
+</p>
 <p>نسخه TWRP الان 2.8.6.1 هست. نسخه جدیدتر رو دانلود میکنیم از اینجا: (فایل مخصوص d802 هست)</p>
 <p class="_ltr"><a href="https://drive.google.com/open?id=1-EF_lKkltmg8SVm4PWZmmJTFA9guFIUV" target="_blank">https://drive.google.com/open?id=1-EF_lKkltmg8SVm4PWZmmJTFA9guFIUV</a></p>
 <p>اگر d802 نیستید از اینجا:</p>
@@ -174,8 +174,8 @@ Send_Command.exe \\.\%comPath% < enterDownload | echo off
 <p>اگه هی ریبوت میشد fixboot رو از اینجا نصب می‌کنیم:</p>
 <p class="_ltr"><a href="https://drive.google.com/open?id=1jA5ZgXEEuVwkHErckNQOhrCjOtKPi1bZ" target="_blank">https://drive.google.com/open?id=1jA5ZgXEEuVwkHErckNQOhrCjOtKPi1bZ</a></p>
 <p>اگه فایده نداشت این دستورات رو با adb shell میزنیم:</p>
-<div class="block-code-parent"><p class="block-code">dd if=/dev/block/platform/msm_sdcc.1/by-name/misc of=/sdcard/miscBU.img
-dd if=/dev/zero of=/dev/block/platform/msm_sdcc.1/by-name/misc</p></div>
+<p class="block-code disable-scrollbars">dd if=/dev/block/platform/msm_sdcc.1/by-name/misc of=/sdcard/miscBU.img
+dd if=/dev/zero of=/dev/block/platform/msm_sdcc.1/by-name/misc</p>
 <p>نصب انجام شد. روی سیستم بوت میکنیم و تمام.</p>
 <p>نکته: اگر آپدیت اومد توی گوشی و نصب کردید و بعدش گوشی هی ریبوت میشد از روش بالا گفتم میشه مشکلش رو حل کرد. ریکاوری ای که اینجا ** گفتم رو اگر نصب کنید باید مشکل بوت لوپ که با نصب از طریق OTA (OTA یعنی همین نصب آپدیت که میاد رو گوشی) بوجود میاد رو حل کنه همونطور که اینجا گفته:</p>
 <p class="_ltr"><a href="https://forum.xda-developers.com/lg-g2/orig-development/rom-lineageos-15-alpha-d802-t3707239" target="_blank">https://forum.xda-developers.com/lg-g2/orig-development/rom-lineageos-15-alpha-d802-t3707239</a></p>

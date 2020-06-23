@@ -28,7 +28,8 @@
       <guid>https://doorbash.github.io/blog/posts/%D8%A8%D8%A7%D8%B2%DB%8C_%D9%87%D8%A7%DB%8C_%D9%81%D9%84%D8%B4_%D9%82%D8%AF%DB%8C%D9%85%DB%8C/</guid>
       <description>این بازی‌های پازل رو حدودا ۱۰ سال پیش با فلش ساختم.برای خودم خیلی خاطره انگیزن. بازی زیاد داشتم ولی خب فقط همینا از اون موقع مونده.
 روی گیتهاب هم ریختمشون: https://github.com/doorbash/my-old-flash-games
-با کلید بالا پایین چپ راست نشانگر حرکت میکنه و دکمه اینتر هم برای انتخاب قطعه ها هست.</description>
+با کلید بالا پایین چپ راست نشانگر حرکت میکنه و دکمه اینتر هم برای انتخاب قطعه ها هست.
+     </description>
     </item>
     
     <item>
@@ -38,10 +39,7 @@
       
       <guid>https://doorbash.github.io/blog/posts/%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85_%D8%A7%D8%B3%D8%AA%DB%8C%DA%A9%D8%B1_%DA%AF%DB%8C%D9%81_%D9%85%D9%85%D9%86%D9%88%D8%B9/</guid>
       <description>اگر شما هم مثل من دوستی دارید که فقط با استیکر و گیف حرف میزنه و این برای شما آزار دهنده هست این اسکریپت برای شماست:
-https://git.io/JfxCp
-مراحل نصب:ابتدا پایتون 3 رو اگر ندارید نصب کنید. سپس این خط رو اجرا کنید:
-pip3 install telethon
-حالا به https://my.telegram.org  مراجعه کنید و یک کلاینت تلگرام بسازید و api_id و api_hash ای که گرفتید را در جای مربوط به خودشون در اسکریپت قرار بدید.</description>
+# 1. pip3 install telethon # 2. Go to https://my.telegram.org/ and get api_id, api_hash from telethon import TelegramClient, events, sync import logging logging.basicConfig(format=&amp;#39;[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s&amp;#39;,level=logging.WARNING) api_id = 12345 api_hash = &amp;#39;PUT-YOUR-API-HASH-HERE&amp;#39; client = TelegramClient(&amp;#39;session_name&amp;#39;, api_id, api_hash) client.start() @client.on(events.NewMessage) async def my_event_handler(event): #is_from_someone = event.</description>
     </item>
     
     <item>
@@ -53,6 +51,16 @@ pip3 install telethon
       <description>این آموزش برای نصب LineageOS 15.1 (اندروید 8.1) روی گوشی LG G2 d802 هست.
 برای مدل های دیگر G2 هم میتونید این آموزش رو دنبال کنید منتها باید بعضی جاها فایل مربوط به دستگاه خودتون رو دانلود کنید بجای فایلی که من نوشتم.
 اولین کاری که باید انجام بدیم فلش کردن رام استوک LP (همون Lollipop یا اندروید 5.0.2) هست.برای اینکار اول باید فایل kdz برای LP رو دانلود کنیم:</description>
+    </item>
+    
+    <item>
+      <title>کوکی بدبختی مودم ها!</title>
+      <link>https://doorbash.github.io/blog/posts/%DA%A9%D9%88%DA%A9%DB%8C_%D8%A8%D8%AF%D8%A8%D8%AE%D8%AA%DB%8C_%D9%85%D9%88%D8%AF%D9%85_%D9%87%D8%A7/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://doorbash.github.io/blog/posts/%DA%A9%D9%88%DA%A9%DB%8C_%D8%A8%D8%AF%D8%A8%D8%AE%D8%AA%DB%8C_%D9%85%D9%88%D8%AF%D9%85_%D9%87%D8%A7/</guid>
+      <description>حدودا یک ماه پیش یه نفر اومد پیش من و بهم گفت مودمش هک شده و پسورد وای فای عوض شده.خب ذهن من رفت سمت هک وای فای گفتم حتما پسورد وای فای ساده بوده.ولی اون ادامه داد پسورد وای فای و ادمین کانفیگ خیلی پیچیده بود.ازش پرسیدم WPS مودمش خاموش بوده گفت آره.این باعث شد من به فکر فرو برم.یعنی هکر از چه راهی وارد شده؟
+با یکم سرچ متوجه شدم تو یه سری از مدل های مودم یه باگ وجود داره به اسم Misfortune Cookie  یا CVE-2015-9222  که به نفوذگر اجازه میده با ارسال کوکی دستکاری شده محتوای مموری مودم رو تغییر بده و احرازهویت رو دور بزنه!</description>
     </item>
     
   </channel>

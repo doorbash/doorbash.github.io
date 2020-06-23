@@ -41,7 +41,7 @@
 https://git.io/JfxCp
 مراحل نصب:ابتدا پایتون 3 رو اگر ندارید نصب کنید. سپس این خط رو اجرا کنید:
 pip3 install telethon
-حالا به https://my.telegram.org  مراجعه کنید و یک کلاینت تلگرام بسازید و api_id و api_hash ای که گرفتید را در جای مربوط به خودشون در اسکریپت قرار بدید.</description>
+ حالا به https://my.telegram.org  مراجعه کنید و یک کلاینت تلگرام بسازید و api_id و api_hash ای که گرفتید را در جای مربوط به خودشون در اسکریپت قرار بدید.</description>
     </item>
     
     <item>

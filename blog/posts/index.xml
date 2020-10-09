@@ -6,10 +6,23 @@
     <description>Recent content in Posts on بلاگ - میلاد دورباش</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://doorbash.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>میزبانی سرور گیت شخصی</title>
+      <link>https://doorbash.github.io/blog/posts/%D9%85%DB%8C%D8%B2%D8%A8%D8%A7%D9%86%DB%8C_%D8%B3%D8%B1%D9%88%D8%B1_%DA%AF%DB%8C%D8%AA_%D8%B4%D8%AE%D8%B5%DB%8C/</link>
+      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://doorbash.github.io/blog/posts/%D9%85%DB%8C%D8%B2%D8%A8%D8%A7%D9%86%DB%8C_%D8%B3%D8%B1%D9%88%D8%B1_%DA%AF%DB%8C%D8%AA_%D8%B4%D8%AE%D8%B5%DB%8C/</guid>
+      <description>خب ازونجایی که گیتلب هم داره اکانت های ایرانی رو مسدود میکنه من هم تصمیم گرفتم سرور گیت خودم رو میزبانی کنم. اینو بیشتر دارم مینویسم که بعدا اگه خواستم دوباره انجامش بدم یادم بیاد چکار کردم!
+دانلود و اکسترکت gogs از اینجا: https://gogs.io/docs/installation/install_from_binary.html
+فایل custom/config/app.ini اگر وجود نداشت میسازیمش و پورت رو توش مینویسیم:
+[server] HTTP_PORT = 7777 اجرای gogs توسط pm2
+pm2 start -i 1 --name gogs ./gogs -- web حالا با مرورگر به آدرس http://domain.</description>
+    </item>
     
     <item>
       <title>بررسی ترافیک شبکه توسط arp spoofing</title>

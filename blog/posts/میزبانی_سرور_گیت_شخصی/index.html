@@ -146,10 +146,14 @@ pm2 start -i 1 --name gogs ./gogs -- web با مرورگر به آدرس http://
 <p>فایل <span class="inline-code">app.ini</span> رو به این شکل تغییرش میدیم:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash"><span style="color:#000;font-weight:bold">[</span>server<span style="color:#000;font-weight:bold">]</span>
 <span style="color:#008080">EXTERNAL_URL</span>     <span style="color:#000;font-weight:bold">=</span> https://domain.com/git
+<span style="color:#008080">HTTP_ADDR</span>        <span style="color:#000;font-weight:bold">=</span> 127.0.0.1
+<span style="color:#008080">DISABLE_SSH</span>      <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">true</span>
 
 <span style="color:#000;font-weight:bold">[</span>service<span style="color:#000;font-weight:bold">]</span>
 <span style="color:#008080">DISABLE_REGISTRATION</span>   <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">true</span>
-</code></pre></div><p>یک پروکسی جدید روی <span class="inline-code">Nginx</span> تعریف میکنیم:</p>
+</code></pre></div><p>همه تنظیمات <span class="inline-code">gogs</span> از اینجا قابل مشاهده هست:
+<p class="_ltr"><a href="https://github.com/gogs/gogs/blob/master/conf/app.ini" target="_blank">https://github.com/gogs/gogs/blob/master/conf/app.ini</a></p></p>
+<p>یک پروکسی جدید روی <span class="inline-code">Nginx</span> تعریف میکنیم:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">http <span style="color:#000;font-weight:bold">{</span>
     ...
     client_max_body_size        0;

@@ -21,7 +21,7 @@
 دانلود و اکسترکت gogs از اینجا: https://gogs.io/docs/installation/install_from_binary.html
 فایل custom/config/app.ini اگر وجود نداشت میسازیمش و پورت رو توش مینویسیم:
 [server] HTTP_PORT = 7777 اجرای gogs توسط pm2
-pm2 start -i 1 --name gogs ./gogs -- web حالا با مرورگر به آدرس http://domain.</description>
+pm2 start -i 1 --name gogs ./gogs -- web با مرورگر به آدرس http://domain.</description>
     </item>
     
     <item>

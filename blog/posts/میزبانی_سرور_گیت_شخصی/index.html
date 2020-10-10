@@ -153,7 +153,9 @@ pm2 start -i 1 --name gogs ./gogs -- web با مرورگر به آدرس http://
 <span style="color:#008080">DISABLE_REGISTRATION</span>   <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">true</span>
 </code></pre></div><p>همه تنظیمات <span class="inline-code">gogs</span> از اینجا قابل مشاهده هست:
 <p class="_ltr"><a href="https://github.com/gogs/gogs/blob/master/conf/app.ini" target="_blank">https://github.com/gogs/gogs/blob/master/conf/app.ini</a></p></p>
-<p>یک پروکسی جدید روی <span class="inline-code">Nginx</span> تعریف میکنیم:</p>
+<p>حالا <span class="inline-code">gogs</span> رو ریستارت میکنیم:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">pm2 restart gogs
+</code></pre></div><p>یک پروکسی جدید روی <span class="inline-code">nginx</span> تعریف میکنیم:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">http <span style="color:#000;font-weight:bold">{</span>
     ...
     client_max_body_size        0;
@@ -165,7 +167,7 @@ pm2 start -i 1 --name gogs ./gogs -- web با مرورگر به آدرس http://
         <span style="color:#000;font-weight:bold">}</span>
     <span style="color:#000;font-weight:bold">}</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p>حالا <span class="inline-code">Nginx</span> رو ریستارت میکنیم و تمام.
+</code></pre></div><p><span class="inline-code">nginx</span> رو ریستارت میکنیم و تمام.
 حالا دیگه میشه بدون دردسر روش مخزن سورس private یا public درست کرد!</p>
 <img class="post-content-img" src="https://doorbash.github.io/blog/images/colyseus_on_gogs.png" alt="colyseus on gogs" />
 <p>اگر با SSL به مشکل برخوردیم میشه سمت کلاینت اینکارو کرد:</p>

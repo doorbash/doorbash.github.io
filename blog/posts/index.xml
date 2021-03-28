@@ -6,10 +6,21 @@
     <description>Recent content in Posts on بلاگ - میلاد دورباش</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Mar 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://doorbash.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>استفاده همزمان از دو مودم اینترنت</title>
+      <link>https://doorbash.github.io/blog/posts/%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87_%D9%87%D9%85%D8%B2%D9%85%D8%A7%D9%86_%D8%A7%D8%B2_%D8%AF%D9%88_%D9%85%D9%88%D8%AF%D9%85_%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA/</link>
+      <pubDate>Sat, 27 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://doorbash.github.io/blog/posts/%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87_%D9%87%D9%85%D8%B2%D9%85%D8%A7%D9%86_%D8%A7%D8%B2_%D8%AF%D9%88_%D9%85%D9%88%D8%AF%D9%85_%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA/</guid>
+      <description>من دو تا مودم اینترنت دارم. ADSL و TD-LTE. در این پست میخام بگم برای اینکه بتونم همزمان از هردوشون برای اتصال به اینترنت استفاده کنم چه کاری انجام دادم.
+نسخه کوتاه: با استفاده از iptables و route در لینوکس
+اولین کاری که کردم روی کامپیوتر خونه Ubuntu 20.10 نصب کردم. و وارد پنل کانفیگ یکی از مودم ها شدم و آدرس شبکه اش رو از 192.168.1.1 به 192.168.48.1 تغییر دادم تا با هم تداخل پیدا نکنند.</description>
+    </item>
     
     <item>
       <title>میزبانی سرور گیت شخصی</title>

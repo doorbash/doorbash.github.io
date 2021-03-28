@@ -156,7 +156,7 @@ iptables -t nat -X
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">-m mark --mark 0x0
 </code></pre></div><p>بهش مارک 2 بده:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">iptables -t mangle -A PREROUTING ! -p tcp -s 192.168.0.0/16 ! -d 192.168.0.0/16 -m mark --mark 0x0 -j MARK --set-mark 2
-</code></pre></div><p>پروتکل tcp رو جدا کردیم چون مارک کردن پکت های tcp به همین سادگی نیست که هر کدوم رو خواستیم هر طرفی بفرستیم. دلیلشم اینه که پروتکل tcp مبتنی بر کانکشن هست و پکت هایی که مرتبط با هر کانکشن هستند باید حتما همگی یک طرف ارسال بشن. یا به عبارت دیگه پکت شروع هر مارکی گرفت بقیه پکت های اون کانکشن هم باید همون مارک رو بگیرند.</p>
+</code></pre></div><p>پروتکل tcp رو جدا کردیم چون مارک کردن پکت های tcp به همین سادگی نیست که هر کدوم رو خواستیم هر طرفی بفرستیم. دلیلشم اینه که پروتکل tcp مبتنی بر کانکشن هست و پکت هایی که مرتبط با هر کانکشن هستند باید حتما همگی یک از یک IP ارسال بشن. یا به عبارت دیگه پکت شروع هر مارکی گرفت بقیه پکت های اون کانکشن هم باید همون مارک رو بگیرند.</p>
 <p>پس این بار برای tcp میگیم:</p>
 <p>اگر پکت برای شروع کانکشن جدید بود:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">-m conntrack --ctstate NEW 
@@ -295,7 +295,6 @@ ip rule add fwmark <span style="color:#099">2</span> table rt_link2
 ip route flush cache
 </code></pre></div><p>لینک:
 <p class="_ltr"><a href="https://gist.github.com/doorbash/a88a28e34e189b2b771b303691264ea6" target="_blank">https://gist.github.com/doorbash/a88a28e34e189b2b771b303691264ea6</a></p></p>
-<p>بعدا حتی میتونیم کاری کنیم بر اساس وضعیت شبکه پکت ها به نسبت وزنی که به هر شبکه اختصاص میدیم مسیریابی بشن. یا مثلا اگر پینگ یکی از شبکه ها افتضاح بود کلا ازش استفاده نکنه.</p>
 <p>در آخر توصیه میکنم حتما این لینک رو بخونید خیلی خوب توضیح داده:</p>
 <p class="_ltr"><a href="https://www.system-rescue.org/networking/Load-balancing-using-iptables-with-connmark/" target="_blank">https://www.system-rescue.org/networking/Load-balancing-using-iptables-with-connmark/</a></p>
 

@@ -208,7 +208,7 @@ echo 0 &gt; /proc/sys/net/ipv4/conf/all/rp_filter
 </code></pre></div><p>تقریبا تمومه. کاری که مونده اینه که سرور dhcp نصب کنیم تا دستگاه هایی که به مودم وصل میشن IP بگیرن:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">sudo apt-get install isc-dhcp-server -y
 </code></pre></div><p>فایل کانفیگش رو باز میکنیم:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">sudo nano /etc/dhcp/dhcpd.conf
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">sudo gedit /etc/dhcp/dhcpd.conf
 </code></pre></div><p>و تغییرات زیر رو اعمال میکنیم:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">option domain-name &#34;&#34;;
 option domain-name-servers 8.8.8.8, 1.1.1.1;

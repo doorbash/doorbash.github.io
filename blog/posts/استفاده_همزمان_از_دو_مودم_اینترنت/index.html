@@ -128,11 +128,11 @@
 
           <div class="post-content" itemprop="articleBody">
             <p>من دو تا مودم اینترنت دارم. ADSL و TD-LTE. در این پست میخام بگم برای اینکه بتونم همزمان از هردوشون برای اتصال به اینترنت استفاده کنم چه کاری انجام دادم.</p>
-<p>نسخه کوتاه: با استفاده از iptables و route در لینوکس</p>
+<p><strong>نسخه کوتاه:</strong> با استفاده از iptables و route در لینوکس</p>
 <p>اولین کاری که کردم روی کامپیوتر خونه Ubuntu 20.10 نصب کردم. و وارد پنل کانفیگ یکی از مودم ها شدم و آدرس شبکه اش رو از 192.168.1.1 به 192.168.48.1 تغییر دادم تا با هم تداخل پیدا نکنند.یکی از مودم ها با کابل شبکه به کامپیوتر متصله با آدرس 192.168.48.160 و اون یکی توسط وای فای به آدرس ثابت 192.168.1.160.</p>
 <p>در واقع اساس کاری که انجام میدیم اینه که میایم پکت ها رو حالا یا یکی در میون یا به صورت تصادفی مارک میکنیم (شماره گذاری میکنیم) و rule هایی برای route تعریف میکنیم که بر اساس این مارک ها به پکت ها مسیر بده. مثلا براش تعریف میکنیم که پکت هایی که مارک 1 دارند توسط وای فای ارسال بشوند و پکت هایی که مارک 2 دارند توسط کابل.</p>
 <p>و در آخر کاری میکنیم که وقتی دستگاه ها به هر کدوم از مودم ها وصل شدند بجای مودم از کامپیوتر IP بگیرند. اینطوری میتونیم آدرس IP کامپیوتر رو بجای آدرس مودم به عنوان gateway IP بدیم. تا پکت ها رو به جای مودم برای ما بفرستند.</p>
-<p>خب مرحله اول میریم برای مارک کردن پکت ها:</p>
+<p><strong>مرحله اول: مارک کردن پکت ها</strong></p>
 <p>اولین کاری که میکنیم تمام chain ها و rule های iptables رو پاک میکنیم:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">iptables -F
 iptables -t mangle -F
@@ -188,7 +188,31 @@ iptables -t mangle -A CONNMARK2 -j CONNMARK --save-mark
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">iptables -t nat -A POSTROUTING -o wlp7s0 -j MASQUERADE
 iptables -t nat -A POSTROUTING -o enp8s0 -j MASQUERADE
 </code></pre></div><p>بعد از o- اسم اینترفیس خروجی میاد که من مال خودمو نوشتم.</p>
-<p>خب این از مارک کردن پکت ها. قدم بعدی مسیر دادن بهشونه بر اساس مارکشون.</p>
+<p>تا الان دستوراتمون اینطوری شد:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">iptables -F
+iptables -t mangle -F
+iptables -t mangle -X
+iptables -t nat -F
+iptables -t nat -X
+
+iptables -t mangle -A PREROUTING ! -p tcp -s 192.168.0.0/16 ! -d 192.168.0.0/16 -m statistic --mode random --probability 0.5 -j MARK --set-mark 1
+iptables -t mangle -A PREROUTING ! -p tcp -s 192.168.0.0/16 ! -d 192.168.0.0/16 -m mark --mark 0x0 -j MARK --set-mark 2
+
+iptables -t mangle -N CONNMARK1
+iptables -t mangle -A CONNMARK1 -j MARK --set-mark 1
+iptables -t mangle -A CONNMARK1 -j CONNMARK --save-mark
+
+iptables -t mangle -N CONNMARK2
+iptables -t mangle -A CONNMARK2 -j MARK --set-mark 2
+iptables -t mangle -A CONNMARK2 -j CONNMARK --save-mark
+
+iptables -t mangle -A PREROUTING -p tcp -s 192.168.0.0/16 ! -d 192.168.0.0/16 -m conntrack --ctstate ESTABLISHED,RELATED -j CONNMARK --restore-mark
+iptables -t mangle -A PREROUTING -p tcp -s 192.168.0.0/16 ! -d 192.168.0.0/16 -m conntrack --ctstate NEW -m statistic --mode random --probability 0.5 -j CONNMARK1
+iptables -t mangle -A PREROUTING -p tcp -s 192.168.0.0/16 ! -d 192.168.0.0/16 -m conntrack --ctstate NEW -m mark --mark 0x0 -j CONNMARK2
+
+iptables -t nat -A POSTROUTING -o wlp7s0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o enp8s0 -j MASQUERADE
+</code></pre></div><p><strong>مرحله دوم: مسیردادن به پکت ها</strong></p>
 <p>کاری که میکنیم اینه که داخل این فایل:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">/etc/iproute2/rt_tables
 </code></pre></div><p>دو جدول جدید اضافه میکنیم:</p>
@@ -205,7 +229,8 @@ ip route add table rt_link2 default via 192.168.1.1 dev enp8s0
 </code></pre></div><p>و در آخر ip forwarding رو فعال میکنیم و rp filter رو غیر فعال:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">echo 1 &gt; /proc/sys/net/ipv4/ip_forward
 echo 0 &gt; /proc/sys/net/ipv4/conf/all/rp_filter
-</code></pre></div><p>تقریبا تمومه. کاری که مونده اینه که سرور dhcp نصب کنیم تا دستگاه هایی که به مودم وصل میشن IP بگیرن:</p>
+</code></pre></div><p><strong>مرحله سوم: نصب سرور DHCP</strong></p>
+<p>تقریبا تمومه. کاری که مونده اینه که سرور dhcp نصب کنیم تا دستگاه هایی که به مودم وصل میشن IP بگیرن:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">sudo apt-get install isc-dhcp-server -y
 </code></pre></div><p>فایل کانفیگش رو باز میکنیم:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">sudo gedit /etc/dhcp/dhcpd.conf
@@ -238,9 +263,10 @@ subnet 192.168.48.0 netmask 255.255.255.0 {
 }
 </code></pre></div><p>و ریستارتش میکنیم:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">sudo systemctl restart isc-dhcp-server.service
-</code></pre></div><p>مرحله آخر اینه که کاری کنیم وقتی لینوکس بالا اومد دستوراتی که نوشتیم اجرا بشه. اینجا خوب توضیح داده چکار باید کرد:
+</code></pre></div><p><strong>مرحله چهارم: استارتاپ</strong></p>
+<p>مرحله آخر اینه که کاری کنیم وقتی لینوکس بالا اومد دستوراتی که نوشتیم اجرا بشه. اینجا خوب توضیح داده چکار باید کرد:
 <p class="_ltr"><a href="https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-20-04-focal-fossa-server-desktop" target="_blank">https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-20-04-focal-fossa-server-desktop</a></p></p>
-<p>کد کامل:</p>
+<p><strong>کد کامل:</strong></p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash"><span style="color:#999;font-weight:bold;font-style:italic">#!/bin/bash
 </span><span style="color:#999;font-weight:bold;font-style:italic"></span>
 <span style="color:#0086b3">echo</span> <span style="color:#099">1</span> &gt;| /proc/sys/net/ipv4/ip_forward
@@ -293,10 +319,23 @@ ip rule add fwmark <span style="color:#099">1</span> table rt_link1
 ip rule add fwmark <span style="color:#099">2</span> table rt_link2
 
 ip route flush cache
-</code></pre></div><p>لینک:
+</code></pre></div><p>لینک کد در گیتهاب:
 <p class="_ltr"><a href="https://gist.github.com/doorbash/a88a28e34e189b2b771b303691264ea6" target="_blank">https://gist.github.com/doorbash/a88a28e34e189b2b771b303691264ea6</a></p></p>
 <p>در آخر توصیه میکنم حتما این لینک رو بخونید خیلی خوب توضیح داده:</p>
 <p class="_ltr"><a href="https://www.system-rescue.org/networking/Load-balancing-using-iptables-with-connmark/" target="_blank">https://www.system-rescue.org/networking/Load-balancing-using-iptables-with-connmark/</a></p>
+<p><strong>پی نوشت (30/3/2021):</strong></p>
+<p>میتونیم پکت های غیر TCP رو بجای اینکه نوبتی برای گیت‌وی ها بفرستیم برای هردوشون بفرستیم:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">iptables -t mangle -N NOTTCP1
+iptables -t mangle -A NOTTCP1 -j MARK --set-mark 1
+iptables -t mangle -A NOTTCP1 -j TEE --gateway 192.168.1.1
+
+iptables -t mangle -N NOTTCP2
+iptables -t mangle -A NOTTCP2 -j MARK --set-mark 2
+iptables -t mangle -A NOTTCP2 -j TEE --gateway 192.168.48.1
+
+iptables -t mangle -A PREROUTING ! -p tcp -s 192.168.1.0/24 ! -d 192.168.0.0/16 -j NOTTCP1
+iptables -t mangle -A PREROUTING ! -p tcp -s 192.168.48.0/24 ! -d 192.168.0.0/16 -j NOTTCP2
+</code></pre></div><p>با این کار خود پکت میره برای گیت‌وی شبکه دیگه (مثلا اگه از شبکه 192.168.1.0/24 اومده میره برای 192.168.48.1) و نت میشه و یک کپی ازش میره برای گیت‌وی شبکه ای که ازش اومده (تو این حالت نت نمیشه). تو حالت اول جواب پکت از طرف ما میره براش و تو حالت دوم جوابش از طرف مودمی که بهش وصله براش ارسال میشه.</p>
 
           </div>
 

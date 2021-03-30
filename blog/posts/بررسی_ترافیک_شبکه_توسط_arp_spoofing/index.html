@@ -124,18 +124,18 @@
             <p>برای بررسی ترافیک هر دستگاهی روی شبکه میشه از این روش که خیلی راحته استفاده کرد.
 کاری که میکنیم اینه که میایم به اون دستگاه میگیم آی‌پی روتر (همون مودم مثلا) مال منه! و به روتر میگیم آی‌پی دستگاه مال منه! و اینها بجای اینکه بیان پکت ها رو برای همدیگه بفرستن برای ما میفرستن اشتباهی.
 و ما پکت ها رو میگیریم و فوروارد میکنیم برای طرف دیگه و این وسط یه نگاهی هم بهشون میندازیم.</p>
-<p>نصب pcap</p>
+<p><strong>نصب pcap</strong></p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">Windows: Download and install npcap 0.99* from https://nmap.org/download.html
 Ubuntu: sudo apt install libpcap0.8-dev
-</code></pre></div><p>فعال کردن Packet Forwarding</p>
+</code></pre></div><p><strong>فعال کردن Packet Forwarding</strong></p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">Windows: https://serverfault.com/questions/929081/how-can-i-enable-packet-forwarding-on-windows
 Linux: <span style="color:#0086b3">echo</span> <span style="color:#099">1</span> &gt; /proc/sys/net/ipv4/ip_forward
 </code></pre></div><p>دانلود <span class="inline-code">arp-spoof.go</span> از اینجا:
 <p class="_ltr"><a href="https://git.io/JfxCx" target="_blank">https://git.io/JfxCx</a></p></p>
-<p>اجرای کد</p>
+<p><strong>اجرای کد</strong></p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">go build
 arp-spoof deviceIP routerIP. Example: arp-spoof 192.168.1.12 192.168.1.1
-</code></pre></div><p>نصب Wireshark:
+</code></pre></div><p><strong>نصب Wireshark:</strong>
 <p class="_ltr"><a href="https://www.wireshark.org/" target="_blank">https://www.wireshark.org/</a></p></p>
 <p>Wireshark را اجرا کنید. اینترفیس (مثلا وای‌فای) را انتخاب کنید تا شروع به کپچر کند.</p>
 <p>حالا مثلا برای گرفتن ترافیک http از آی‌پی موردنظر این فیلتر را وارد میکنیم:</p>

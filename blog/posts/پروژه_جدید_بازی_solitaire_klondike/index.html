@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>پروژه جدید: بازی Solitaire Klondike - بلاگ - میلاد دورباش</title>
+<meta name="description" content="تو این پست میخام در مورد تجربه ای که از ساخت بازی ساده Solitaire Klondike داشتم صحبت کنم. و همینطور در مورد مسائلی که برای ساختش سعی کردم رعایت کنم نکاتی رو بگم که شاید به درد کسی که برنامه نویس بازی هست بخوره. و در آخر در مورد جزئیات فنی (زبان برنامه نویسی، موتور بازیسازی و کتابخونه های استفاده شده) توضیح میدم.
+این بازی (Solitaire) یک بازی اندرویدی یک نفره با ورق (پاسور) هست که فعلا قابلیت های زیر رو داره:"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://doorbash.github.io/blog/posts/%D9%BE%D8%B1%D9%88%DA%98%D9%87_%D8%AC%D8%AF%DB%8C%D8%AF_%D8%A8%D8%A7%D8%B2%DB%8C_solitaire_klondike/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="تو این پست میخام در مورد تجربه ای که از ساخت بازی ساده Solitaire Klondike داشتم صحبت کنم. و همینطور در مورد مسائلی که برای ساختش سعی کردم رعایت کنم نکاتی رو بگم که شاید به درد کسی که برنامه نویس بازی هست بخوره. و در آخر در مورد جزئیات فنی (زبان برنامه نویسی، موتور بازیسازی و کتابخونه های استفاده شده) توضیح میدم.
+این بازی (Solitaire) یک بازی اندرویدی یک نفره با ورق (پاسور) هست که فعلا قابلیت های زیر رو داره:" />
+<meta name="twitter:title" content="پروژه جدید: بازی Solitaire Klondike - بلاگ - میلاد دورباش" />
+<meta name="twitter:site" content="http://twitter.com/bul_ikana" />
+<meta name="twitter:creator" content="http://twitter.com/bul_ikana" />
+
+
+<meta property="og:type" content="article" />
+<meta content="پروژه جدید: بازی Solitaire Klondike - بلاگ - میلاد دورباش" property="og:title">
+<meta content="تو این پست میخام در مورد تجربه ای که از ساخت بازی ساده Solitaire Klondike داشتم صحبت کنم. و همینطور در مورد مسائلی که برای ساختش سعی کردم رعایت کنم نکاتی رو بگم که شاید به درد کسی که برنامه نویس بازی هست بخوره. و در آخر در مورد جزئیات فنی (زبان برنامه نویسی، موتور بازیسازی و کتابخونه های استفاده شده) توضیح میدم.
+این بازی (Solitaire) یک بازی اندرویدی یک نفره با ورق (پاسور) هست که فعلا قابلیت های زیر رو داره:" property="og:description">
+<meta property="og:url" content="https://doorbash.github.io/blog/posts/%D9%BE%D8%B1%D9%88%DA%98%D9%87_%D8%AC%D8%AF%DB%8C%D8%AF_%D8%A8%D8%A7%D8%B2%DB%8C_solitaire_klondike/" />
+<meta property="og:site_name" content="بلاگ - میلاد دورباش" />
+
+<meta property="article:published_time" content="2021-05-21 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+<script type="application/ld+json">
+{ 
+    "@context": "http://schema.org", 
+    "@type": "BlogPosting",
+    "headline": "پروژه جدید: بازی Solitaire Klondike",
+    "genre": "",  
+    "url": "https:\/\/doorbash.github.io\/blog\/posts\/%D9%BE%D8%B1%D9%88%DA%98%D9%87_%D8%AC%D8%AF%DB%8C%D8%AF_%D8%A8%D8%A7%D8%B2%DB%8C_solitaire_klondike\/",
+    "datePublished": "2021-05-21 00:00:00 \u002b0000 UTC",
+    "description": "تو این پست میخام در مورد تجربه ای که از ساخت بازی ساده Solitaire Klondike داشتم صحبت کنم. و همینطور در مورد مسائلی که برای ساختش سعی کردم رعایت کنم نکاتی رو بگم که شاید به درد کسی که برنامه نویس بازی هست بخوره. و در آخر در مورد جزئیات فنی (زبان برنامه نویسی، موتور بازیسازی و کتابخونه های استفاده شده) توضیح میدم.\nاین بازی (Solitaire) یک بازی اندرویدی یک نفره با ورق (پاسور) هست که فعلا قابلیت های زیر رو داره:",
+    "author": {
+        "@type": "Person",
+        "name": ""
+    }
+ }
+</script>
+
+
+
+
+<link rel="stylesheet" href="/blog/sass/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://doorbash.github.io/blog/">بلاگ - میلاد دورباش</a>
+    </div>
+  </div>
+</nav>
+</header>
+
+
+    <div class="container">
+      <div class="wrapper">
+        
+<div class="row">
+
+<div class="col-md-4 mt20">
+        <div class="post-img">
+           
+            <img width="600" src="https://doorbash.github.io/blog/images/solitaire.jpg" alt="پروژه جدید: بازی Solitaire Klondike">
+            
+        </div>
+            
+        
+        <div class="mt10 recent">
+            <h3 class="mb16">نوشته‌های اخیر</h3>        
+             <ul>
+                
+
+                      <li>
+                      <p><small>May 21, 2021&nbsp;&nbsp;</small><a href="https://doorbash.github.io/blog/posts/%D9%BE%D8%B1%D9%88%DA%98%D9%87_%D8%AC%D8%AF%DB%8C%D8%AF_%D8%A8%D8%A7%D8%B2%DB%8C_solitaire_klondike/">پروژه جدید: بازی Solitaire Klondike</a></p>
+                      </li>
+
+                
+
+                      <li>
+                      <p><small>March 27, 2021&nbsp;&nbsp;</small><a href="https://doorbash.github.io/blog/posts/%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87_%D9%87%D9%85%D8%B2%D9%85%D8%A7%D9%86_%D8%A7%D8%B2_%D8%AF%D9%88_%D9%85%D9%88%D8%AF%D9%85_%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA/">استفاده همزمان از دو مودم اینترنت</a></p>
+                      </li>
+
+                
+
+                      <li>
+                      <p><small>October 9, 2020&nbsp;&nbsp;</small><a href="https://doorbash.github.io/blog/posts/%D9%85%DB%8C%D8%B2%D8%A8%D8%A7%D9%86%DB%8C_%D8%B3%D8%B1%D9%88%D8%B1_%DA%AF%DB%8C%D8%AA_%D8%B4%D8%AE%D8%B5%DB%8C/">میزبانی سرور گیت شخصی</a></p>
+                      </li>
+
+                
+              </ul>
+        </div>
+        
+        <br>
+
+</div>
+
+<div class="col-md-8">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+          <header class="post-header">
+            <h1 class="post-title" itemprop="name headline">پروژه جدید: بازی Solitaire Klondike</h1>
+            <p class="post-meta"><time datetime='2021-05-21T00:00:00Z' itemprop="datePublished">May 21, 2021</time></p>
+                 
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <p>تو این پست میخام در مورد تجربه ای که از ساخت بازی ساده Solitaire Klondike داشتم صحبت کنم. و همینطور در مورد مسائلی که برای ساختش سعی کردم رعایت کنم نکاتی رو بگم که شاید به درد کسی که برنامه نویس بازی هست بخوره. و در آخر در مورد جزئیات فنی (زبان برنامه نویسی، موتور بازیسازی و کتابخونه های استفاده شده) توضیح میدم.</p>
+<p>این بازی (Solitaire) یک بازی اندرویدی یک نفره با ورق (پاسور) هست که فعلا قابلیت های زیر رو داره:</p>
+<ul>
+<li>حالت سه کارتی و تک کارتی</li>
+<li>حرکت با لمس کارت</li>
+<li>نمایش امتیاز و زمان</li>
+<li>دکمه آندو (برگرداندن)</li>
+<li>چینش دست چپی</li>
+<li>امکان تعیین جهت صفحه (افقی، عمودی یا چرخش خودکار)</li>
+<li>دو نوع چینش حالت افقی</li>
+<li>نمایش آمار بازی و لیست بازی های قبلی</li>
+<li>پشتیبانی از دو زبان فارسی و انگلیسی</li>
+<li>امکان قطع و وصل کردن صدای بازی</li>
+</ul>
+<h3 id="بهرهوری-یا-performance">بهره‌وری یا Performance</h3>
+<p>یکی از مسائلی که خیلی برای توسعه بازی مهم هست همین بحث بهره وریه. ساده بخوام بگم هدف اینه که از منابعی که در اختیار داریم (مثل حافظه RAM یا پردازنده یا گرافیک) کمتر استفاده کنیم. بازی ای که روان اجرا میشه مسلما تجربه بهتری به کاربر میده. هیچ کس دوست نداره بازی گیر کنه، هنگ کنه یا زیاد از باتری گوشیش استفاده کنه.</p>
+<h4 id="--فریم-در-ثانیه-fps">- فریم در ثانیه (FPS)</h4>
+<p>برای اینکه fps رو بیاریم پایین باید تعداد draw call هامون تو هر فریم رو کم کنیم. کاری که کردم این بود که تمام تصاویر، آیکون ها و فونت هایی که تو بازی استفاده شده رو در قالب یک عکس 1024x1024 پک کردم. اینطوری فقط یک تکسچر بایند میشه و تعداد draw call ها میشه 1.</p>
+<h4 id="--ذخیره-و-بازیابی-از-فایل">- ذخیره و بازیابی از فایل</h4>
+<p>حالت (State) فعلی بازی بعد از هر حرکت باید توی فایل نوشته میشد . و زمانی که کاربر دوباره وارد بازی میشد از فایل خونده میشد.</p>
+<p>همینطور بازی های آسان قابل حل هم باید توی فایل ذخیره میشدن.</p>
+<p>اول میخاستم از JSON استفاده کنم ولی ازونجایی که JSON به صورت متنی هست بهتر بود از روشی که باینری ذخیره میکنه استفاده میکردم. برای همین protobuf رو انتخاب کردم. پروژه دیگه ای که از لحاظ بهره وری توی بنچمارک هایی که دیدم از protobuf بهتر بود kryo بود که اونم میتونست انتخاب خوبی باشه.</p>
+<p>این مثلا نحوه ذخیره لیست بازی ها رو نشون میده:
+هر بازی 56 بایت فضا میگیره (52 کارت به اضافه کمی سربار که خود protobuf برای ذخیره ساختار اضافه میکنه)</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">message GamePB {
+  bytes data = 1;
+}
+
+message GamesPB {
+  repeated GamePB list = 1;
+}
+</code></pre></div><h3 id="حجم-فایل-نصبی">حجم فایل نصبی</h3>
+<p>هرچه حجم فایل نصبی که کاربر قراره دانلود کنه کمتر باشه احتمال اینکه بازی ما نصب بیشتری بگیره بیشتره. این بازی ساده هست و چون حجم نهایی زیر 15MB هست میشه از قابلیت instant apps گوگل پلی استفاده کرد که حجم پایین تر یک مزیت خوب محسوب میشه.</p>
+<p>جدا از این برای ما که برای مارکت ایرانی هم جدا ریلیز میدیم این مساله مهمتر هم میشه. البته این چیزی که نیست که بخایم زیاد روش تمرکز کنیم ولی برای من (حداقل اولش) مهم بود که حجم بازی زیر یک مگابایت بشه (که آخرشم نشد!).</p>
+<p>با جدا کردن فایل .so هر معماری تو gradle و حذف فایل استایل libgdx و تعریف دستیشون تو کد و یه سری حذف های جزئی و proguard تونستم حجم فایل نهایی رو بیارم روی 750KB.</p>
+<p>اما بعد که protobuf اضافه کردم شد 920KB. هنوز زیر یک مگابایت بود! تا اینکه مجبور شدم برای رابط کابری از کتابخونه material گوگل استفاده کنم که با فونت ها و لیست بازی های آسان حجم نهایی 3.5MB شد.</p>
+<p><img src="https://media.giphy.com/media/B2l0NnxK9KiVa0CXBh/giphy.gif" alt="not great not terrible"></p>
+<h3 id="رابط-کاربری">رابط کاربری</h3>
+<p>من همیشه سعی میکنم کاری کنم کاربر تو کمترین زمان و راحت ترین شکل ممکن به کاری که میخاد تو بازی بکنه برسه. مثلا اگه دکمه تنظیمات توی منوی بازی باشه کاربر باید اول بره توی منوی بازی و بعد از اونجا بره تنظیمات. این میشه دو مرحله. به این فکر میکنم که آیا میشه یک مرحله اش کنیم؟ بله یک دکمه تنظیمات میذاریم گوشه بالا سمت راست.</p>
+<p>یا مثلا دکمه آندو برای حالت افقی میتونست بالا باشه ولی معمولا کاربری که داره با گوشی به صورت افقی کار میکنه داره یک دستی گوشی رو میگیره. پس بهتره بذاریمش پایین که به انگشت شصت نزدیک باشه.</p>
+<h3 id="جزئیات-فنی">جزئیات فنی</h3>
+<p>بازی با استفاده از <a href="https://libgdx.com/" target="_blank"> LibGDX </a> ساخته شده و با زبان برنامه نویسی <a href="https://kotlinlang.org/" target="_blank"> کاتلین </a> (و کمی هم جاوا)</p>
+<p>برای شروع ساخت پروژه از <a href="https://github.com/tommyettinger/gdx-liftoff" target="_blank"> gdx-liftoff </a></p>
+<p>برای گیم پلی و منو ها از <a href="https://github.com/libgdx/libgdx/wiki/Scene2d" target="_blank"> Scene2D </a> که برای LibGDX هست.</p>
+<p>از <a href="https://github.com/libktx/ktx" target="_blank"> LibKTX </a> برای کار کردن راحت تر با LibGDX</p>
+<p>برای پک کردن عکس ها و فونت ها از <a href="https://github.com/raeleus/skin-composer" target="_blank"> Skin Composer </a></p>
+<p>برای ذخیره و بازیابی استیت بازی و همینطور بازیابی لیست بازی های آسان از <a href="https://github.com/protocolbuffers/protobuf" target="_blank"> protobuf </a></p>
+<p>منوهای بازی (و دکمه ها و switch و spinner) هم ویجت کاستوم هستن که از  floatingGroup از کتابخونه <a href="https://github.com/kotcrab/vis-ui" target="_blank"> vis-ui </a> ارث بری میکنند. البته فقط دیالوگ منو، تنظیمات و خروج از بازی.
+برای ساخت دیالوگ &ldquo;بازی های قبلی&rdquo; و &ldquo;شما برنده شدید&rdquo; از Dialog اندروید SDK استفاده شده.</p>
+<p>تم کل برنامه هم Theme.MaterialComponents.NoActionBar هست.</p>
+<p>از کتابخونه <a href="https://github.com/marlonlom/timeago" target="_blank"> timeago </a> برای نمایش تاریخ به صورت نسبی (مثلا دو ساعت پیش)</p>
+<p>آیکون ها هم <a href="https://github.com/google/material-design-icons" target="_blank"> آیکون های متریال دیزاین </a> گوگل هستن</p>
+
+          </div>
+
+    </article>
+    <div class="row">
+        
+         
+<div id="disqus_thread"></div>
+<script defer>
+(function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//doorbash-github-io.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        
+    </div>
+</div>
+
+</div>
+
+
+
+
+      </div>
+    </div>
+
+    <footer>
+    <div class="container">
+        <div class="row p20">
+            
+                <div class="col-md-4 text-center mt25">All rights reserved by <a target="_blank" href="https://doorbash.github.io">میلاد دورباش</a></div>
+            
+
+            <div class="col-md-4 text-center mt25" >
+                
+                <a target="_blank" href="https://bool.netlify.com"><img src="https://img.shields.io/badge/Built%20by-bool-brightgreen.svg" alt="bool"></a>
+                
+            </div>
+            <div class="col-md-4 text-center mt25">
+               
+                <a target="_blank" href="https://github.com/doorbash"><li class="social github"><i class="fa fa-github-square"></i></li></a>
+                
+               
+                <a target="_blank" href="mailto:milad.doorbash@gmail.com"><li class="social email"><i class="fa fa-envelope"></i></li></a>
+                
+            </div>
+
+        </div> 
+    </div>
+</footer>
+    
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://doorbash.github.io/blog//js/bootstrap.min.js"></script>
+   
+     
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-128176167-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+  </body>
+
+</html>

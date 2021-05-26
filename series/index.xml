@@ -4,10 +4,6 @@
     <title>Series on Milad Doorbash</title>
     <link>https://doorbash.github.io/series/</link>
     <description>Recent content in Series on Milad Doorbash</description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	<atom:link href="https://doorbash.github.io/series/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://doorbash.github.io/series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
